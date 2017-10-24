@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+        <title>Semi-Restful Users</title>
+        {%load static%}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	</head>
+	<body>
+        <div class="container">
+            <h1>　User {{user.id}} info　</h1>
+                <div id="product">
+                  
+                    <p>Full name:  {{ user.firstname }} {{user.lastname}}</p>
+                    <p>Email address:  {{ user.email }} </p>
+                    <p>Created_at: {{ user.created_at}}</p>
+                    <a href="/semi_users/edit/{{user.id}}">Edit/  </a><a href="/semi_users/delete/{{user.id}}">Delete/</a>
+                   
+                </div>
+        </div>
+	</body>
+</html>

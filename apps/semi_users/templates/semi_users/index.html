@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+        <title>Semi-Restful Users</title>
+        {%load static%}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	</head>
+	<body>
+        <div class="container">
+            <h1>　Users　</h1>
+                <div id="product">
+                    <table class="table">
+                        <tr class="success">
+                            <th>id</th>
+                            <th>Full name</th>
+                            <th>Email</th>
+                            <th>created_at</th>
+                            <th>Action</th>
+                        </tr>
+                        {% for user in user %}
+                        <tr>
+                            <td>{{ user.id}}</td>
+                            <td><a href="/semi_users/{{user_id}}">{{ user.firstname }} {{user.lastname}}</a></td>
+                            <td>{{ user.email}}</td>
+                            <td>{{ user.created_at}}</td>
+                            <td><a href="/semi_users/edit/{{user.id}}">Edit/  </a><a href="/semi_users/show/{{user.id}}">Show/  </a><a href="/semi_users/delete/{{user.id}}">Delete/</a></td>
+                        </tr>
+                       {% endfor %}  
+                    </table>
+                    <a href="/semi_users/new">Add a new user</a>
+                </div>
+        </div>
+	</body>
+</html>

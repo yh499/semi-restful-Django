@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+        <title>Semi-Restful Users</title>
+        {%load static%}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	</head>
+	<body>
+        <div class="container">
+            <h1>　Add a new user　</h1>
+            <div id="adduser">
+                <form action="/semi_users/create" method='post'>
+                {% csrf_token %}
+                First name:<br>
+                <input type="text" name="firstname">
+                <br>
+                Last name:<br>
+                <input type="text" name="lastname">
+                <br>
+                Email: <br>
+                <input type="text" name="email"><br>
+                <input type="submit" name="new" value="Create">
+                </form> 
+            </div>
+            <a href="/semi_users">Go back</a>
+        </div>  
+	</body>
+</html>
+
